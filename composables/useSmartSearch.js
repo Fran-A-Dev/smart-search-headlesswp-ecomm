@@ -17,7 +17,9 @@ export const useSmartSearch = () => {
         body: { query, variables },
       });
     } catch (err) {
-      console.error("GraphQL error:", err);
+      if (process.dev) {
+        console.error("GraphQL error:", err);
+      }
       throw err;
     }
   };

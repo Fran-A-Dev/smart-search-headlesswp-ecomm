@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import SearchInput from "./SearchInput.vue";
 import ActivityFilter from "./ActivityFilter.vue";
 import PriceFilter from "./PriceFilter.vue";
@@ -323,6 +323,33 @@ const clearAllFilters = () => {
   activityFilterRef.value?.clearActivity();
   priceFilterRef.value?.clearPrice();
 };
+
+// Handle clear search from home link
+const handleClearFromHome = () => {
+  clearResults();
+  clearAllFilters();
+  // Emit empty search results to reset the parent state
+  emit("search-results", {
+    results: [],
+    total: 0,
+    query: "",
+    type: "clear",
+    time: 0,
+  });
+};
+
+// Listen for clear search event from home link
+onMounted(() => {
+  if (process.client) {
+    window.addEventListener("clear-search-from-home", handleClearFromHome);
+  }
+});
+
+onUnmounted(() => {
+  if (process.client) {
+    window.removeEventListener("clear-search-from-home", handleClearFromHome);
+  }
+});
 </script>
 
 <style scoped>

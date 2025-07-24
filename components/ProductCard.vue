@@ -43,30 +43,15 @@
 <script setup>
 const { product } = defineProps(["product"]);
 
-// Debug: Log the product data when component mounts
-console.log("ProductCard received product:", {
-  id: product.id,
-  title: product.title,
-  image: product.image,
-  imageType: typeof product.image,
-  imageLength: product.image?.length,
-});
-
 const handleImageError = (event) => {
-  // No fallback - let it show broken image or hide
-  console.log(
-    "Image failed to load for product:",
-    product.id,
-    "URL:",
-    event.target?.src || "unknown",
-    "Original image prop:",
-    product.image
-  );
+  // Image failed to load - NuxtImg will handle fallback display
+  if (process.dev) {
+    console.warn("Image failed to load for product:", product.id);
+  }
 };
 
-const handleImageLoad = (event) => {
+const handleImageLoad = () => {
   // Image loaded successfully - NuxtImg handles opacity automatically
-  console.log("Image loaded successfully for product:", product.id);
 };
 </script>
 

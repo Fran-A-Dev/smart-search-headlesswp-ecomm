@@ -40,7 +40,9 @@ export const useSearchLogic = () => {
         searchTime,
       };
     } catch (error) {
-      console.error("Search error:", error);
+      if (process.dev) {
+        console.error("Search error:", error);
+      }
       return {
         success: false,
         error: `Search failed: ${error.message || "Please try again."}`,
@@ -81,7 +83,9 @@ export const useSearchLogic = () => {
         query: `Price: $${min} - $${max}`,
       };
     } catch (error) {
-      console.error("Price search error:", error);
+      if (process.dev) {
+        console.error("Price search error:", error);
+      }
       return {
         success: false,
         error: `Search failed: ${error.message || "Please try again."}`,
@@ -111,7 +115,9 @@ export const useSearchLogic = () => {
         };
       });
     } catch (error) {
-      console.error("Error fetching product details:", error);
+      if (process.dev) {
+        console.error("Error fetching product details:", error);
+      }
       return products;
     }
   };

@@ -1,7 +1,7 @@
 <template>
   <div>
     <Head>
-      <Title>Nuxt Kitchen Sink | {{ product.title }}</Title>
+      <Title>{{ product.title }} | Nuxt headlesswp eCommerce</Title>
       <Meta name="description" :content="product.description" />
     </Head>
 
