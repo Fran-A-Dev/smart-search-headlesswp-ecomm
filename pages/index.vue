@@ -1,6 +1,5 @@
 <template>
   <div>
-    <SearchBar @search-results="handleSearchResults" />
     <!-- Default Products (shown when no search active) -->
     <div v-if="!searchActive" class="default-products">
       <h2 class="text-2xl font-bold mb-6">All Products</h2>
@@ -16,7 +15,7 @@
 <script setup>
 import { ref } from "vue";
 import ProductCard from "~/components/ProductCard.vue";
-import SearchBar from "~/components/SearchBar.vue";
+
 // Search state
 const searchActive = ref(false);
 
