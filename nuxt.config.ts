@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   },
 
   // CSS optimization
-  css: ["~/assets/css/main.css"],
+  css: ["~/assets/main/main.css"],
 
   // Build optimizations
   build: {

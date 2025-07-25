@@ -1,7 +1,5 @@
 <template>
   <div>
-    <SearchBar @search-results="handleSearchResults" />
-
     <!-- Loading State -->
     <div v-if="pending" class="text-center py-12">
       <div class="inline-flex items-center">
@@ -96,12 +94,13 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import ProductCard from "~/components/ProductCard.vue";
-import SearchBar from "~/components/SearchBar.vue";
+
 // Search state
 const searchActive = ref(false);
 
-// Handle search results from SearchBar
-const handleSearchResults = (searchData) => {
+// Handle search results from layout SearchBar
+const handleSearchResults = (event) => {
+  const searchData = event.detail;
   searchActive.value = searchData.results.length > 0 || searchData.query.trim();
 };
 
@@ -113,15 +112,17 @@ const handleResetSearch = () => {
   window.dispatchEvent(searchBarEvent);
 };
 
-// Listen for reset search event from layout
+// Listen for search results from layout and reset search event
 onMounted(() => {
   if (process.client) {
+    window.addEventListener("layout-search-results", handleSearchResults);
     window.addEventListener("reset-search", handleResetSearch);
   }
 });
 
 onUnmounted(() => {
   if (process.client) {
+    window.removeEventListener("layout-search-results", handleSearchResults);
     window.removeEventListener("reset-search", handleResetSearch);
   }
 });
