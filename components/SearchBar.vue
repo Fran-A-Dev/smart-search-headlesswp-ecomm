@@ -71,7 +71,7 @@ const {
   performActivitySearch,
   performPriceOnlySearch,
   fetchCompleteProductData,
-  applyPriceFilter,
+  // applyPriceFilter, // Removed - Smart Search now handles price filtering server-side
 } = useSearchLogic();
 
 // Component refs
@@ -241,21 +241,10 @@ const executePriceFilter = async () => {
     return;
   }
 
-  // Filter existing results by price
-  const filteredResults = applyPriceFilter(
-    searchResults.value,
-    priceRange.value
-  );
-  searchResults.value = filteredResults;
-  totalResults.value = filteredResults.length;
-
-  emit("search-results", {
-    results: searchResults.value,
-    total: totalResults.value,
-    query: `Price: $${priceRange.value.min} - $${priceRange.value.max}`,
-    type: "price-filter",
-    time: 0,
-  });
+  // Since we can't re-filter existing results server-side, we need to perform a new search
+  // This is a limitation - ideally we'd store the original query and re-run it with price filters
+  // For now, we'll perform a price-only search as the most reasonable approach
+  await executePriceOnlySearch();
 };
 
 const executePriceOnlySearch = async () => {
@@ -269,22 +258,16 @@ const executePriceOnlySearch = async () => {
   const result = await performPriceOnlySearch(priceRange.value);
 
   if (result.success) {
+    // Smart Search already filtered by price server-side, so we just use the results
     searchResults.value = result.results;
     totalResults.value = result.total;
     searchTime.value = result.searchTime;
 
-    // Fetch complete product data
+    // Fetch complete product data if needed
     if (result.results.length > 0) {
       const completeResults = await fetchCompleteProductData(result.results);
       searchResults.value = completeResults;
-
-      // Apply price filter to the complete results
-      const filteredResults = applyPriceFilter(
-        searchResults.value,
-        priceRange.value
-      );
-      searchResults.value = filteredResults;
-      totalResults.value = filteredResults.length;
+      // No need for client-side price filtering anymore - Smart Search handled it
     }
 
     emit("search-results", {

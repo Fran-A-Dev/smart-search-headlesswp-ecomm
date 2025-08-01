@@ -41,15 +41,47 @@ export const useSmartSearch = () => {
   /**
    * Search products via Smart Search API.
    * @param {string} searchQuery - The search keywords.
-   * @param {{ limit?: number }} [options] - Optional parameters.
+   * @param {{ limit?: number, filters?: object }} [options] - Optional parameters including filters.
    */
-  const searchProducts = (searchQuery, { limit = 10 } = {}) =>
-    _post({
+  const searchProducts = (searchQuery, { limit = 10, filters = {} } = {}) => {
+    // Build the GraphQL query dynamically based on available filters
+    let queryString = `query SearchProducts($query: String!, $limit: Int`;
+    let variablesObj = { query: searchQuery, limit };
+    
+    // Add price filter variables if provided
+    if (filters.price) {
+      queryString += `, $minPrice: Float, $maxPrice: Float`;
+      variablesObj.minPrice = filters.price.min;
+      variablesObj.maxPrice = filters.price.max;
+    }
+    
+    queryString += `) {
+  find(
+    query: $query
+    limit: $limit
+    filter: "post_type:product"`;
+    
+    // Add price filter to the query if provided
+    if (filters.price) {
+      queryString += `
+    priceFilter: { min: $minPrice, max: $maxPrice }`;
+    }
+    
+    queryString += `
+    semanticSearch: { searchBias: 10, fields: ["post_title", "post_content"] }
+  ) {
+    total
+    documents { id score data }
+  }
+}`;
+
+    return _post({
       url: smartSearchUrl,
       token: smartSearchToken,
-      query: `query SearchProducts($query: String!, $limit: Int) {\n  find(\n    query: $query\n    limit: $limit\n    filter: "post_type:product"\n    semanticSearch: { searchBias: 10, fields: [\"post_title\", \"post_content\"] }\n  ) {\n    total\n    documents { id score data }\n  }\n}`,
-      variables: { query: searchQuery, limit },
+      query: queryString,
+      variables: variablesObj,
     });
+  };
 
   /**
    * Fetch product details from WPGraphQL.
