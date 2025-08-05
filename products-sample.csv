@@ -1,0 +1,79 @@
+ID,Type,SKU,"GTIN, UPC, EAN, or ISBN",Name,Published,"Is featured?","Visibility in catalog","Short description",Description,"Date sale price starts","Date sale price ends","Tax status","Tax class","In stock?",Stock,"Low stock amount","Backorders allowed?","Sold individually?","Weight (lbs)","Length (in)","Width (in)","Height (in)","Allow customer reviews?","Purchase note","Sale price","Regular price",Categories,Tags,"Shipping class",Images,"Download limit","Download expiry days",Parent,"Grouped products",Upsells,Cross-sells,"External URL","Button text",Position,Brands,"Meta: _yoast_wpseo_primary_product_brand","Meta: _yoast_wpseo_primary_product_cat","Meta: _yoast_wpseo_content_score","Meta: _yoast_wpseo_estimated-reading-time-minutes"
+198,simple,1,,"AlpineGrip Chalk Bag",1,0,visible,,"<ul>
+\n 	<li data-start=""237"" data-end=""427"">
+\n<p data-start=""240"" data-end=""427"">A durable, weather-resistant chalk bag with a contoured shape for easy access and a secure belt attachment—perfect for keeping your hands dry on long routes.</p>
+\n</li>
+\n</ul>",,,taxable,,1,,,0,0,,,,,1,,,19.99,climbing,climbing,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/ORG-XLChalkBag4A.webp,,,,,,,,,0,,,,90,1
+204,simple,2,,"SummitPro Climbing Harness",1,0,visible,,"Lightweight yet robust harness featuring adjustable leg loops and a comfortable waist belt, rated for both sport and trad climbing.",,,taxable,,1,,,0,0,,,,,1,,,59.99,climbing,climbing,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/003ebe_6d0f739e79b0402a89507621ff879773mv2.avif,,,,,,,,,0,,,,,
+206,simple,3,,"EdgeFlex Climbing Shoes",1,0,visible,,"High-performance synthetic climbing shoes with aggressive downturn and sticky rubber sole for precise edging on technical climbs.",,,taxable,,1,,,0,0,,,,,1,,,189.99,climbing,climbing,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/otaki.jpeg,,,,,,,,,0,,,,,
+208,simple,4,,"CliffMaster Quickdraw Set (6-pack)",1,0,visible,,"Six ultra-lightweight quickdraws with anodized aluminum carabiners and durable dogbones—ideal for sport routes and cragging.",,,taxable,,1,,,0,0,,,,,1,,,109.99,climbing,climbing,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/qdraws.jpeg,,,,,,,,,0,,,,,
+210,simple,5,,"PeakForce Climbing Helmet",1,0,visible,,"CE-certified, impact-absorbing helmet with adjustable fit system and ample ventilation for all-day comfort on the rock.",,,taxable,,1,,,0,0,,,,,1,,,49.99,climbing,climbing,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/climb-helmet.webp,,,,,,,,,0,,,,,
+212,simple,6,,"AeroStride Running Shoes",1,0,visible,,"Breathable, responsive road-running shoes with carbon-fiber-infused midsole for a propulsive ride over any distance.",,,taxable,,1,,,0,0,,,,,1,,,149.99,Running,running,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/pegs.webp,,,,,,,,,0,,,,,
+214,simple,7,,"EnduroLite Moisture-Wicking Shirt",1,0,visible,,"Fast-dry, anti-odor running tee made from recycled polyester with UPF 50+ sun protection.",,,taxable,,1,,,0,0,,,,,1,,,39.99,Running,running,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/run-shirt.webp,,,,,,,,,0,,,,,
+216,simple,8,,"PacePulse GPS Running Watch",1,0,visible,,"<ul>
+\n 	<li data-start=""2239"" data-end=""2387"">
+\n<p data-start=""2243"" data-end=""2387"">Multi-sport GPS watch with heart-rate monitoring, advanced pace metrics, and customizable interval alerts.</p>
+\n</li>
+\n 	<li data-start=""2389"" data-end=""2556"">
+\n<p data-start=""2393"" data-end=""2556""></p>
+\n</li>
+\n</ul>",,,taxable,,1,,,0,0,,,,,1,,,249.99,Running,running,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/d4690db1-b0af-4e57-b5d9-bd3d66106dff.avif,,,,,,,,,0,,,,,
+218,simple,9,,"HydroFlow Hydration Pack (1.5 L)",1,0,visible,,"Lightweight backpack with an easy‐sip reservoir, reflective accents, and multiple pockets for gels and small essentials.",,,taxable,,1,,,0,0,,,,,1,,,49.99,Running,running,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/camelpak.jpeg,,,,,,,,,0,,,,,
+220,simple,10,,"Reflect360 Safety Vest",1,0,visible,,"High-visibility vest with 360° reflective strips and breathable mesh back—stay seen on pre-dawn or evening runs.",,,taxable,,1,,,0,0,,,,,1,,,19.99,Running,running,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/running-vest.jpeg,,,,,,,,,0,,,,,
+222,simple,11,,"CodeFlow Ergonomic Keyboard",1,0,visible,,"Split, tented keyboard with adjustable tilt and tactile switches—minimize wrist strain during marathon coding sessions.",,,taxable,,1,,,0,0,,,,,1,,,199.99,coding,coding,,"https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/ergokb.webp, https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/ergokb.webp",,,,,,,,,0,,,,,
+224,simple,12,,"Initech Mug Programmer’s Coffee Mug",1,0,visible,,"350 ml ceramic mug printed with common coding syntax—keeps your coffee warm and your coding humor intact.",,,taxable,,1,,,0,0,,,,,1,,,9.99,coding,,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/initech-mub.webp,,,,,,,,,0,,,,,
+226,simple,13,,"MacBook Pro - Silver",1,0,visible,,"<div class=""column large-6 small-12 rs-cto-side-panel rs-cto-side-large-panel"">
+\n<div class=""rf-configuration-sticky"">
+\n<div class=""rf-flagship-buystrip"">
+\n<p class=""as-buystrip-title dd-compact-large-10""></p>
+\n
+\n</div>
+\n</div>
+\n</div>
+\n<div class=""column large-6 small-12 rs-cto-main-panel"">
+\n<div class=""rf-configuration-productsummary"" data-autom=""productSummary"">
+\n<div class=""rf-configuration-specs"">
+\n<ul class=""rf-configuration-subheader typography-body-reduced"">
+\n 	<li>16-inch Liquid Retina XDR display²</li>
+\n 	<li>Standard display</li>
+\n 	<li>Apple M4 Max chip with 14‑core CPU, 32‑core GPU, 16‑core Neural Engine</li>
+\n 	<li>36GB unified memory</li>
+\n 	<li>1TB SSD storage</li>
+\n 	<li>140W USB-C Power Adapter</li>
+\n 	<li>Three Thunderbolt 5 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port</li>
+\n</ul>
+\n</div>
+\n</div>
+\n</div>",,,taxable,,1,,,0,0,,,,,1,,,3500.00,coding,coding,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/macbook-pro-14.webp,,,,,,,,,0,,,,,
+229,simple,14,,"Lamicall Adjustable Laptop Stand",1,0,visible,,"Aluminum stand that elevates your laptop to eye level, improving posture and creating extra desk space for peripherals.",,,taxable,,1,,,0,0,,,,,1,,,25.99,coding,coding,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/lt-stand.webp,,,,,,,,,0,,,,,
+231,simple,15,,"FocusShield Noise-Canceling Headphones",1,0,visible,,"Over-ear headphones with active noise cancellation and long-lasting battery life to help you concentrate in any environment.",,,taxable,,1,,,0,0,,,,,1,,,199.99,coding,coding,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/bose.webp,,,,,,,,,0,,,,,
+234,simple,16,,"Software Dev Hacker Hoodie",1,0,visible,,"<p data-start=""34"" data-end=""222"">Stay toasty in your server dungeon—or your home office—without sacrificing geek cred. The Software Dev Hacker Hoodie is the ultimate fusion of comfort, functionality, and hacker swagger.</p>
+\n
+\n<ul data-start=""224"" data-end=""1323"">
+\n 	<li data-start=""224"" data-end=""442"">
+\n<p data-start=""226"" data-end=""442""><strong data-start=""226"" data-end=""253"">Thermo‑Optimized Lining</strong><br data-start=""253"" data-end=""256"" />Crafted with a proprietary “404°F Not Found” thermal fabric, this hoodie traps heat where you need it most—so your fingers stay nimble for late‑night commits and emergency bug fixes.</p>
+\n</li>
+\n 	<li data-start=""444"" data-end=""648"">
+\n<p data-start=""446"" data-end=""648""><strong data-start=""446"" data-end=""470"">Secret Snack Pocket™</strong><br data-start=""470"" data-end=""473"" />Tired of that mid-pull‑request growl? Stash your emergency energy gels, granola bars, or the occasional gummy bear in an extra‑deep kangaroo pocket (no one will suspect!).</p>
+\n</li>
+\n 	<li data-start=""650"" data-end=""932"">
+\n<p data-start=""652"" data-end=""932""><strong data-start=""652"" data-end=""677"">Cable‑Friendly Design</strong><br data-start=""677"" data-end=""680"" />Reinforced headphone loops on the hood keep your earbuds from tangling with your mechanical keyboard’s coiled USB cable. Bonus: a hidden pass‑through port lets your phone charge inside your pocket—caffeine for your code, and power for your devices.</p>
+\n</li>
+\n 	<li data-start=""934"" data-end=""1148"">
+\n<p data-start=""936"" data-end=""1148""><strong data-start=""936"" data-end=""962"">Stealth Mode Aesthetic</strong><br data-start=""962"" data-end=""965"" />Matte‑black, minimalist embroidery of cryptic binary patterns on the chest and sleeves means only fellow devs will notice. No gaudy logos—just pure, unadulterated hacker elegance.</p>
+\n</li>
+\n 	<li data-start=""1150"" data-end=""1323"">
+\n<p data-start=""1152"" data-end=""1323""><strong data-start=""1152"" data-end=""1177"">Bug‑Repellent™ Fabric</strong><br data-start=""1177"" data-end=""1180"" />We can’t guarantee your code will be bug‑free, but this hoodie’s water‑ and spaghetti‑sauce‑resistant shell keeps real‑world messes at bay.</p>
+\n</li>
+\n</ul>
+\n<p data-start=""1325"" data-end=""1590"">Whether you’re wrangling a stubborn CI pipeline at 2 AM or pairing‑programming in a frigid conference room, the Software Dev Hacker Hoodie has your back (and your core temperature). Slip it on, drop into stealth mode, and let the world know: you debug in comfort.</p>
+\n<p data-start=""1592"" data-end=""1730"" data-is-last-node="""" data-is-only-node=""""><em data-start=""1592"" data-end=""1730"" data-is-last-node="""">Note: Doesn’t grant actual hacking powers—please don’t try to spill coffee on your keyboard to “short‑circuit” your way to admin access.</em></p>",,,taxable,,1,,,0,0,,,,,1,,,39.99,coding,coding,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/node.js-hoodie.jpeg,,,,,,,,,0,,,,,
+236,simple,17,,"Compression Running Shorts",1,0,visible,,"The Light Speed Compression Shorts with revolutionary Muscle Containment Stamping (MCS) technology are developed with a detailed understanding of the impact running has on the legs, reducing muscle movement, damage, and fatigue for your best run ever.
+\n
+\nModel Measurements: Height: 175cm, Chest: 93cm, Waist: 76cm",,,taxable,,1,,,0,0,,,,,1,,,89.99,Running,running,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/MA5331b_BLK-GRF_1_ddsrsq_600x.webp,,,,,,,,,0,,,,,
+238,simple,18,,"Ripstop Rugged Climbing Pants",1,0,visible,,"Combining strategically placed knit panels for breathability and stretch with high-tech, trail-tough performance, the RADIKL™ was built for action. Lightweight, and incredibly durable, the RADIKL™ features superior abrasion resistance and UV protection for extended outdoor adventure.",,,taxable,,1,,,0,0,,,,,1,,,129.99,climbing,climbing,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/5109_radikl_pant_grey_camo_front.webp,,,,,,,,,0,,,,,
+240,simple,19,,"Rock Crush C4 Cam",1,0,visible,,"10% lighter yet just as durable as before, the updated Black Diamond Camalot C4 cam features a modern design that improves on tried-and-true Camalots with an optimized strength-to-weight ratio.",,,taxable,,1,,,0,0,,,,,1,,,109.99,climbing,climbing,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/11100589-ca94-4e0d-9c85-f7cc0da7ef61.avif,,,,,,,,,0,,,,,
+242,simple,20,,"Cragsmith Pack 45L",1,0,visible,,"The 45-liter gear dumpster. This pack is your workhorse for the crag, with plenty of room for hardware. Top- or back-panel access makes this beast easy to load and unload, and a durable water repellent (DWR) finish made without intentionally added PFAS helps brush off surprise showers. Made in a Fair Trade Certified™ factory.",,,taxable,,1,,,0,0,,,,,1,,,229.00,climbing,climbing,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/48066_SLPU.webp,,,,,,,,,0,,,,,
+244,simple,21,,"TypeScript Handbook",1,0,visible,,"Over 20 years after its introduction to the programming community, JavaScript is now one of the most widespread cross-platform languages ever created. Starting as a small scripting language for adding trivial interactivity to webpages, JavaScript has grown to be a language of choice for both frontend and backend applications of every size. While the size, scope, and complexity of programs written in JavaScript has grown exponentially, the ability of the JavaScript language to express the relationships between different units of code has not. Combined with JavaScript’s rather peculiar runtime semantics, this mismatch between language and program complexity has made JavaScript development a difficult task to manage at scale.
+\n
+\nThe most common kinds of errors that programmers write can be described as type errors: a certain kind of value was used where a different kind of value was expected. This could be due to simple typos, a failure to understand the API surface of a library, incorrect assumptions about runtime behavior, or other errors. The goal of TypeScript is to be a static typechecker for JavaScript programs - in other words, a tool that runs before your code runs (static) and ensures that the types of the program are correct (typechecked).",,,taxable,,1,,,0,0,,,,,1,,,4.99,coding,coding,,https://smartcache.wpenginepowered.com/wp-content/uploads/2025/07/Screenshot-2025-07-17-at-10.05.25 AM.png,,,,,,,,,0,,,,,
