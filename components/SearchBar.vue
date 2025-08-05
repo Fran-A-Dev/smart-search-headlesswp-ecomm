@@ -70,8 +70,7 @@ const {
   performSearch,
   performActivitySearch,
   performPriceOnlySearch,
-  fetchCompleteProductData,
-  // applyPriceFilter, // Removed - Smart Search now handles price filtering server-side
+  performCombinedSearch,
 } = useSearchLogic();
 
 // Component refs
@@ -119,7 +118,18 @@ const handleSearchClear = () => {
 const handleActivitySelected = async (activityValue) => {
   selectedActivity.value = activityValue;
   searchInputRef.value?.clearQuery();
-  await executeActivitySearch(activityValue);
+
+  // Check if price filter is active
+  const hasPriceFilter =
+    priceRange.value.min > 0 || priceRange.value.max < maxPrice.value;
+
+  if (hasPriceFilter) {
+    // Use combined search for activity + price
+    await executeCombinedSearch(activityValue, priceRange.value);
+  } else {
+    // Use activity-only search
+    await executeActivitySearch(activityValue);
+  }
 };
 
 const handleActivityCleared = () => {
@@ -134,7 +144,15 @@ const handlePriceChanged = (priceData) => {
 
 const handlePriceApplied = async (priceData) => {
   priceRange.value = priceData;
-  await executePriceFilter();
+
+  // Check if activity filter is active
+  if (selectedActivity.value) {
+    // Use combined search for activity + price
+    await executeCombinedSearch(selectedActivity.value, priceData);
+  } else {
+    // Use price-only search
+    await executePriceFilter();
+  }
 };
 
 const handlePriceCleared = () => {
@@ -143,6 +161,7 @@ const handlePriceCleared = () => {
   if (searchInputRef.value?.searchQuery?.trim()) {
     executeSearch(searchInputRef.value.searchQuery, "semantic-search");
   } else if (selectedActivity.value) {
+    // Re-run activity search without price filter
     executeActivitySearch(selectedActivity.value);
   }
 };
@@ -167,12 +186,6 @@ const executeSearch = async (query, type) => {
     searchResults.value = result.results;
     totalResults.value = result.total;
     searchTime.value = result.searchTime;
-
-    // Fetch complete product data
-    if (result.results.length > 0) {
-      const completeResults = await fetchCompleteProductData(result.results);
-      searchResults.value = completeResults;
-    }
 
     emit("search-results", {
       results: searchResults.value,
@@ -208,12 +221,6 @@ const executeActivitySearch = async (activityValue) => {
     totalResults.value = result.total;
     searchTime.value = result.searchTime;
 
-    // Fetch complete product data
-    if (result.results.length > 0) {
-      const completeResults = await fetchCompleteProductData(result.results);
-      searchResults.value = completeResults;
-    }
-
     emit("search-results", {
       results: searchResults.value,
       total: totalResults.value,
@@ -235,15 +242,6 @@ const executeActivitySearch = async (activityValue) => {
 };
 
 const executePriceFilter = async () => {
-  if (!searchResults.value.length) {
-    // If no search has been performed, search all products with price filter
-    await executePriceOnlySearch();
-    return;
-  }
-
-  // Since we can't re-filter existing results server-side, we need to perform a new search
-  // This is a limitation - ideally we'd store the original query and re-run it with price filters
-  // For now, we'll perform a price-only search as the most reasonable approach
   await executePriceOnlySearch();
 };
 
@@ -255,26 +253,57 @@ const executePriceOnlySearch = async () => {
   const query = `Price: $${priceRange.value.min} - $${priceRange.value.max}`;
   emit("search-start", { query, type: "price-filter" });
 
-  const result = await performPriceOnlySearch(priceRange.value);
+  // Pass activity filter if active
+  const result = await performPriceOnlySearch(
+    priceRange.value,
+    selectedActivity.value || null
+  );
 
   if (result.success) {
-    // Smart Search already filtered by price server-side, so we just use the results
     searchResults.value = result.results;
     totalResults.value = result.total;
     searchTime.value = result.searchTime;
-
-    // Fetch complete product data if needed
-    if (result.results.length > 0) {
-      const completeResults = await fetchCompleteProductData(result.results);
-      searchResults.value = completeResults;
-      // No need for client-side price filtering anymore - Smart Search handled it
-    }
 
     emit("search-results", {
       results: searchResults.value,
       total: totalResults.value,
       query: result.query,
-      type: "price-filter",
+      type: selectedActivity.value ? "combined-filter" : "price-filter",
+      time: searchTime.value,
+    });
+  } else {
+    error.value = result.error;
+    searchResults.value = [];
+    totalResults.value = 0;
+  }
+
+  isLoading.value = false;
+  emit("search-complete", {
+    success: result.success,
+    resultsCount: searchResults.value.length,
+  });
+};
+
+const executeCombinedSearch = async (activityValue, priceData) => {
+  isLoading.value = true;
+  error.value = "";
+  hasSearched.value = true;
+
+  const query = `Activity: ${activityValue} | Price: $${priceData.min} - $${priceData.max}`;
+  emit("search-start", { query, type: "combined-filter" });
+
+  const result = await performCombinedSearch(activityValue, priceData);
+
+  if (result.success) {
+    searchResults.value = result.results;
+    totalResults.value = result.total;
+    searchTime.value = result.searchTime;
+
+    emit("search-results", {
+      results: searchResults.value,
+      total: totalResults.value,
+      query: result.query,
+      type: "combined-filter",
       time: searchTime.value,
     });
   } else {
