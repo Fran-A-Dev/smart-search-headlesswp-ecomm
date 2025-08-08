@@ -1,76 +1,99 @@
-# Nuxt Minimal Starter
+# Headless WordPress E-commerce Boilerplate
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A simple headless e-commerce application built with Nuxt.js and WordPress/WooCommerce. This boilerplate provides a basic product catalog with a main index page and individual product detail pages.
 
-## Setup
+## 🏗️ What This Boilerplate Includes
 
-Make sure to install dependencies:
+This is a minimal headless WordPress e-commerce site featuring:
+
+- **Product Index Page**: Main page displaying all products in a grid layout
+- **Product Detail Pages**: Individual pages for each product with detailed information
+- **WordPress/WooCommerce Backend**: Headless CMS with GraphQL API integration
+- **Responsive Design**: Mobile-friendly layout built with Tailwind CSS
+- **Modern Frontend**: Built with Nuxt.js and Vue.js
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Nuxt.js 4.x, Vue.js 3.x
+- **Styling**: Tailwind CSS
+- **Backend**: WordPress with WooCommerce (headless)
+- **Data Layer**: GraphQL via WPGraphQL
+- **Image Optimization**: Nuxt Image module
+
+## 🚀 Setup
+
+### Prerequisites
+
+- Node.js 18+
+- WordPress installation with WooCommerce
+- WPGraphQL plugin installed
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-# npm
+git clone https://github.com/Fran-A-Dev/smart-search-headlesswp-ecomm.git
+cd smart-search-boilerplate
+```
+
+2. Install dependencies:
+
+```bash
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+3. Configure environment variables:
 
-Start the development server on `http://localhost:3000`:
+```env
+NUXT_PUBLIC_WORDPRESS_URL=https://your-wordpress-site.com/graphql
+NUXT_PUBLIC_SMART_SEARCH_URL=https://your-smart-search-api.com/graphql
+NUXT_PUBLIC_SMART_SEARCH_TOKEN=your-api-token
+```
+
+4. Start development server:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## 📄 Pages
 
-Build the application for production:
+### Index Page (`pages/index.vue`)
 
-```bash
-# npm
-npm run build
+- Displays all products in a responsive grid
+- Shows loading states and error handling
+- Fetches products from WordPress via GraphQL
+- Uses the `products` layout
 
-# pnpm
-pnpm build
+### Product Detail Page (`pages/[id].vue`)
 
-# yarn
-yarn build
+- Dynamic routing for individual products
+- Displays detailed product information
+- Handles product not found scenarios
 
-# bun
-bun run build
-```
+## 🧩 Key Components
 
-Locally preview production build:
+### Product Components
 
-```bash
-# npm
-npm run preview
+- **ProductCard**: Displays product summary in grid layout
+- **ProductDetails**: Shows detailed product information
 
-# pnpm
-pnpm preview
+## 📊 Sample Data
 
-# yarn
-yarn preview
+The `products-sample.csv` file contains sample products across three categories:
 
-# bun
-bun run preview
-```
+- Climbing gear (harnesses, shoes, protection)
+- Running equipment (shoes, apparel, watches)
+- Coding accessories (keyboards, laptops, books)
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-# smart-search-headlesswp-ecomm
+## 🔧 Configuration
+
+The boilerplate is configured in `nuxt.config.ts` with:
+
+- Tailwind CSS integration
+- Image optimization settings
+- Runtime configuration for API endpoints
+- SEO meta tags and head management
+
+This boilerplate serves as a starting point for building more advanced headless e-commerce applications with additional features like search, filtering, and enhanced user interactions.
